@@ -243,7 +243,7 @@ Beyond Blue: 1300 22 4636
 
 ## 👥 Team
 
-Created with ❤️ using AI assistance for the [Hackathon Name] Challenge 3
+Created with ❤️ using AI assistance for the RMIT Gen AI & CyberSecurity Hackathon Challenge 3
 
 **Demo Video:** See `youtube_link.txt`
 **Detailed Report:** See `project_report.pdf`
@@ -251,3 +251,9 @@ Created with ❤️ using AI assistance for the [Hackathon Name] Challenge 3
 ---
 
 **Remember:** Every memory is precious. This game celebrates the rich experiences of Australian life while raising awareness about dementia and supporting those affected by memory challenges.
+
+## Notes
+- All prompts were used with ChatGPT-5 and Claude
+- Responses were refined through iterative conversations
+- Focus remained on therapeutic value and social impact
+- Historical accuracy verified through research
