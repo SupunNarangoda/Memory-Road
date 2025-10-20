@@ -151,7 +151,12 @@ function updatePlayerPosition() {
  */
 function showQuiz() {
     const modal = document.getElementById('quizModal');
-    const question = quizQuestions[Math.floor(Math.random() * quizQuestions.length)];
+
+    // Load questions from localStorage if available, otherwise use defaults
+    const storedQuestions = localStorage.getItem('memoryRoad_customQuestions');
+    const questionsToUse = storedQuestions ? JSON.parse(storedQuestions) : quizQuestions;
+
+    const question = questionsToUse[Math.floor(Math.random() * questionsToUse.length)];
 
     document.getElementById('quizCategory').textContent = question.category;
     document.getElementById('quizQuestion').textContent = question.question;

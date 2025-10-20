@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Portal - Memory Road</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+    <div class="admin-container">
+        <div class="admin-header">
+            <h1>Family Admin Portal</h1>
+            <p class="admin-subtitle">Edit quiz questions for your loved one</p>
+            <button class="btn btn-secondary" onclick="window.location.href='index.html'">← Back to Game</button>
+        </div>
+
+        <div class="admin-content">
+            <div class="admin-info">
+                <p><strong>Note:</strong> Changes are saved automatically in your browser. The original questions are always preserved and can be restored.</p>
+                <button class="btn btn-primary" id="restoreDefaultBtn">Restore Default Questions</button>
+                <button class="btn btn-secondary" id="addNewQuestionBtn">+ Add New Question</button>
+            </div>
+
+            <div class="questions-list" id="questionsList">
+                <!-- Questions will be loaded here dynamically -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit Modal -->
+    <div id="editModal" class="modal">
+        <div class="modal-content admin-modal-content">
+            <div class="modal-header">Edit Question</div>
+
+            <div class="form-group">
+                <label for="editCategory">Category:</label>
+                <input type="text" id="editCategory" class="form-input" placeholder="e.g., Australian History">
+            </div>
+
+            <div class="form-group">
+                <label for="editQuestion">Question:</label>
+                <textarea id="editQuestion" class="form-textarea" rows="3" placeholder="Enter your question here..."></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>Answer Options:</label>
+                <div id="optionsContainer">
+                    <div class="option-input">
+                        <input type="text" class="form-input option-text" data-index="0" placeholder="Option 1">
+                        <input type="radio" name="correctAnswer" value="0">
+                        <label>Correct</label>
+                    </div>
+                    <div class="option-input">
+                        <input type="text" class="form-input option-text" data-index="1" placeholder="Option 2">
+                        <input type="radio" name="correctAnswer" value="1">
+                        <label>Correct</label>
+                    </div>
+                    <div class="option-input">
+                        <input type="text" class="form-input option-text" data-index="2" placeholder="Option 3">
+                        <input type="radio" name="correctAnswer" value="2">
+                        <label>Correct</label>
+                    </div>
+                    <div class="option-input">
+                        <input type="text" class="form-input option-text" data-index="3" placeholder="Option 4">
+                        <input type="radio" name="correctAnswer" value="3">
+                        <label>Correct</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="editFeedback">Feedback (shown after answering):</label>
+                <textarea id="editFeedback" class="form-textarea" rows="4" placeholder="Enter encouraging feedback..."></textarea>
+            </div>
+
+            <div class="modal-actions">
+                <button class="btn btn-primary" id="saveQuestionBtn">Save Question</button>
+                <button class="btn btn-secondary" id="cancelEditBtn">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/game-data.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+</html>
