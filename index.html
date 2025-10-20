@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Road - A Dementia Awareness Game</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Menu Screen -->
+    <div id="menuScreen" class="screen active">
+        <div class="menu-container">
+            <h1 class="game-title">🧠 Memory Road</h1>
+            <p class="game-subtitle">A Journey to Celebrate Your Life Memories</p>
+            
+            <div class="menu-buttons">
+                <button class="btn btn-primary" onclick="startGame()">Start Memory Journey</button>
+                <button class="btn btn-secondary" onclick="toggleAbout()">About This Activity</button>
+                <button class="btn btn-secondary" onclick="showHighScore()">My Best Score</button>
+            </div>
+
+            <div id="aboutSection" class="about-text" style="display: none;">
+                <h3>About Memory Road</h3>
+                <p>Memory Road is a gentle memory exercise designed for people with dementia to test recall of real historical events and cultural memories from their lifetime in Australia.</p>
+                
+                <div class="stats">
+                    💙 This activity uses real facts and events to stimulate long-term memory recall in a supportive way.
+                </div>
+
+                <p><strong>How to Play:</strong></p>
+                <p>🎲 Roll the dice to move along your memory path<br>
+                💭 Answer questions about real events from Australian history and your lifetime<br>
+                ⭐ Test your memory of things like decimal currency, the moon landing, and childhood experiences<br>
+                💙 Learn or re-learn facts in a gentle, encouraging environment</p>
+
+                <p><strong>Benefits:</strong> Reminiscence therapy using real historical events can help stimulate long-term memory, improve mood, and provide a sense of connection to the past. Questions are based on common Australian experiences for people aged 60+.</p>
+
+                <h3>For Caregivers</h3>
+                <p>This game helps your loved one recall factual memories from their past. If they answer incorrectly, the game gently reminds them of the correct answer. This is normal and okay - reminiscence therapy is about the process, not perfection. Sit with them, encourage them, and celebrate what they do remember!</p>
+                
+                <p><strong>Support:</strong> Dementia Australia Helpline: 1800 100 500</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Game Screen -->
+    <div id="gameScreen" class="screen">
+        <div class="game-container">
+            <div class="game-header">
+                <div>
+                    <div class="score-display">Memory Points: <span id="score">0</span></div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressBar"></div>
+                    </div>
+                </div>
+                <div class="position-display">Position: <span id="position">1</span>/30</div>
+                <button class="btn btn-secondary" onclick="quitGame()" style="padding: 10px 20px; min-width: auto;">Quit</button>
+            </div>
+
+            <div class="board-container">
+                <div class="board" id="gameBoard"></div>
+                <div id="playerToken" class="player-token"></div>
+            </div>
+
+            <div class="dice-controls">
+                <div class="dice" id="diceDisplay">?</div>
+                <button class="btn-roll" id="rollButton" onclick="rollDice()">Roll Dice 🎲</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Results Screen -->
+    <div id="resultsScreen" class="screen">
+        <div class="results-container">
+            <h1 class="results-title">Journey Complete! 🎉</h1>
+            
+            <div class="results-stats">
+                <div class="stat-card">
+                    <div class="stat-value" id="finalScore">0</div>
+                    <div class="stat-label">Memory Points</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value" id="correctAnswers">0</div>
+                    <div class="stat-label">Correct Answers</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value" id="totalQuestions">0</div>
+                    <div class="stat-label">Questions Answered</div>
+                </div>
+            </div>
+
+            <div class="results-message" id="resultsMessage"></div>
+
+            <div class="dementia-fact">
+                <h3>💙 Your Memories Matter</h3>
+                <p id="finalFact"></p>
+            </div>
+
+            <div class="menu-buttons">
+                <button class="btn btn-primary" onclick="startGame()">Play Again</button>
+                <button class="btn btn-secondary" onclick="backToMenu()">Main Menu</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Quiz Modal -->
+    <div id="quizModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header" id="quizCategory">Memory Question</div>
+            <div class="quiz-question" id="quizQuestion"></div>
+            <div class="quiz-options" id="quizOptions"></div>
+            <div class="quiz-feedback" id="quizFeedback"></div>
+            <button class="btn btn-primary" id="continueButton" onclick="closeQuiz()" style="display: none; width: 100%;">Continue Journey</button>
+        </div>
+    </div>
+
+    <!-- JavaScript Files -->
+    <script src="js/questions.js"></script>
+    <script src="js/game.js"></script>
+    <script src="js/ui.js"></script>
+</body>
+</html>
