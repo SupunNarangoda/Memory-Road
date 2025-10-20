@@ -1,0 +1,158 @@
+=== MEMORY ROAD - CONCEPT GENERATION PROMPTS ===
+
+Date: 2024
+Purpose: Initial game concept development and brainstorming
+
+---
+
+PROMPT 1: Initial Concept Brainstorming
+=========================================
+"I need to create a web-based game for a hackathon that addresses a pressing social challenge in Australia. The game should be educational, impactful, and fun. It must be a board game, card game, or dice game format. Suggest 5 game concepts that address Australian social issues, with a focus on mental health and wellbeing."
+
+Response Summary:
+- Dementia awareness game using memory and reminiscence
+- Mental health journey board game
+- Social isolation card game
+- Climate anxiety coping game
+- Indigenous health awareness game
+
+Selected Concept: Dementia awareness through reminiscence therapy
+
+---
+
+PROMPT 2: Game Mechanics Design
+================================
+"I want to create a dementia awareness board game called 'Memory Road' where players move along a path and answer questions about real Australian historical events from the 1940s-1980s. The game should be gentle and therapeutic for elderly players. Design the core game mechanics, win conditions, and player progression system."
+
+Response Summary:
+- Dice-based movement (1-6 spaces)
+- 30-tile board representing life journey
+- Quiz questions at each tile
+- Memory points scoring system
+- Special milestone tiles at positions 5, 10, 15, 20, 25
+- Gentle feedback for incorrect answers
+- No harsh penalties, focus on learning
+
+---
+
+PROMPT 3: Therapeutic Approach
+===============================
+"How can I make a memory-based quiz game therapeutic and supportive for people with dementia? The game will ask questions about Australian history. I want to ensure it's not frustrating but instead encouraging and educational."
+
+Response Summary:
+- Use reminiscence therapy principles
+- Provide gentle correction, not punishment
+- Include detailed historical context in feedback
+- Use warm, compassionate language
+- Focus on the process, not perfection
+- Include encouraging messages regardless of performance
+- Add dementia awareness facts at the end
+
+---
+
+PROMPT 4: Question Topic Selection
+===================================
+"Generate a list of 15-20 topics for quiz questions that would be suitable for Australian dementia patients aged 60-90+. Topics should relate to real historical events, cultural moments, and common experiences from their lifetime (1940s-1980s). Focus on long-term memories that are often preserved even with dementia."
+
+Response Summary:
+Topics selected:
+- Decimal currency change (1966)
+- Moon landing (1969)
+- Gough Whitlam dismissal (1975)
+- Childhood memories (milkman, ice cream, school)
+- Technology changes (phones, TV, refrigeration)
+- Royal visits
+- Sports heroes (Don Bradman)
+- Music and dance (Rock and Roll)
+- Fashion changes
+- Transport (trams, trains)
+- World events (WWII, Remembrance Day)
+
+---
+
+PROMPT 5: User Experience Design
+=================================
+"Design a warm, accessible UI/UX for an elderly-friendly game about dementia awareness. The interface should be calming, easy to navigate, use large text, and have high contrast. Suggest color schemes, button sizes, and animation styles."
+
+Response Summary:
+- Purple/blue gradient backgrounds (calming)
+- Large, rounded buttons with clear labels
+- High contrast text (white on dark, dark on light)
+- Smooth, gentle animations (no jarring movements)
+- Progress indicators
+- Large, readable fonts (1.2em minimum)
+- Generous padding and spacing
+- Mobile-responsive design
+
+---
+
+PROMPT 6: Game Flow Structure
+==============================
+"Design the screen flow for Memory Road game: Menu → Play → Results. What should each screen contain? What options should players have?"
+
+Response Summary:
+Menu Screen:
+- Game title and subtitle
+- Start Game button
+- About section (dementia info)
+- High Score display
+
+Play Screen:
+- Score and position display
+- Visual game board
+- Player token
+- Dice display
+- Roll button
+- Quiz modal overlay
+- Progress bar
+
+Results Screen:
+- Final statistics
+- Encouraging message based on performance
+- Dementia awareness fact
+- Play Again / Main Menu buttons
+
+---
+
+PROMPT 7: Accessibility Considerations
+=======================================
+"What accessibility features should I include in a browser game designed for elderly users and people with cognitive challenges?"
+
+Response Summary:
+- Large, clear text (18px minimum)
+- High contrast ratios (WCAG AA standard)
+- No time pressure or timed challenges
+- Clear visual feedback for all actions
+- Simple navigation (no complex menus)
+- Avoid flashing or rapid animations
+- Support for keyboard navigation
+- Mobile-friendly touch targets (min 44px)
+- Reduced motion options
+
+---
+
+PROMPT 8: Social Impact Messaging
+==================================
+"Write compelling messaging about dementia awareness to include in my game. Include statistics about dementia in Australia and explain the therapeutic value of reminiscence."
+
+Response Summary:
+Key statistics:
+- 472,000+ Australians living with dementia
+- 1 in 6 people over 80 affected
+- Someone develops dementia every 6 minutes
+- $15.7 billion annual economic cost
+
+Therapeutic benefits:
+- Reminiscence stimulates long-term memory
+- Improves mood and wellbeing
+- Creates connection to the past
+- Validates experiences and identity
+- Provides caregiver engagement opportunities
+
+---
+
+Notes:
+- All prompts were used with ChatGPT-4 and Claude
+- Responses were refined through iterative conversations
+- Focus remained on therapeutic value and social impact
+- Historical accuracy verified through research

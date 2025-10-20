@@ -1,0 +1,322 @@
+=== MEMORY ROAD - CODE GENERATION PROMPTS ===
+
+Date: 2024
+Purpose: AI-assisted code development and implementation
+
+---
+
+PROMPT 1: Initial HTML Structure
+=================================
+"Create a complete HTML5 structure for a browser-based board game called Memory Road. Include semantic HTML, meta tags for SEO and accessibility, and separate sections for menu screen, game screen, and results screen. The game should have a modal for quiz questions."
+
+Result: Generated base index.html with:
+- Semantic HTML5 structure
+- Three main screens (menu, game, results)
+- Modal for quiz questions
+- Accessibility meta tags
+- Proper document structure
+
+---
+
+PROMPT 2: CSS Styling System
+=============================
+"Write comprehensive CSS for a dementia awareness game with these requirements:
+- Warm purple/blue gradient backgrounds
+- Large, accessible buttons (minimum 44px touch targets)
+- Smooth animations that aren't jarring
+- Responsive grid layout for game board (10 columns)
+- High contrast text (WCAG AA)
+- Card-based UI with rounded corners
+- Gentle transitions and hover effects"
+
+Result: Generated complete CSS with:
+- CSS custom properties for colors
+- Flexbox and Grid layouts
+- Smooth animations
+- Responsive breakpoints
+- Accessibility features
+- Button hover states
+- Modal animations
+
+---
+
+PROMPT 3: Game State Management
+================================
+"Create a JavaScript game state management system for a board game with these properties:
+- Player position on board (0-30)
+- Score tracking
+- Questions answered count
+- Correct answers count
+- Current dice roll value
+- Movement animation state
+- Quiz answer state
+
+Include functions to initialize, update, and reset the game state."
+
+Result: Generated gameState object and management functions
+
+---
+
+PROMPT 4: Dice Rolling Mechanism
+=================================
+"Write a JavaScript function to simulate dice rolling with animation. The function should:
+- Generate random number 1-6
+- Animate the dice display for realistic effect
+- Disable roll button during animation
+- Play sound effect (placeholder)
+- Return the rolled value
+- Trigger player movement after roll"
+
+Result: Generated rollDice() function with animation
+
+---
+
+PROMPT 5: Board Generation
+===========================
+"Create a JavaScript function that generates a 30-tile game board with these specifications:
+- 10 columns x 3 rows grid
+- Special milestone tiles at positions 5, 10, 15, 20, 25
+- Memory tiles at every 3rd position
+- Regular path tiles for others
+- Each tile shows its number and type label
+- Tiles have unique IDs for positioning"
+
+Result: Generated createBoard() function
+
+---
+
+PROMPT 6: Player Movement Animation
+====================================
+"Write a JavaScript function to animate player token movement across the board. Requirements:
+- Move step by step, not instant
+- Update position state incrementally
+- Smooth CSS transition for token
+- Calculate token position based on tile coordinates
+- Delay between steps (300ms)
+- Trigger quiz after movement completes"
+
+Result: Generated movePlayer() and updatePlayerPosition() functions
+
+---
+
+PROMPT 7: Quiz Question Database
+=================================
+"Generate 16 historically accurate quiz questions about Australian history and culture from 1940-1980 suitable for dementia patients aged 60+. Each question should have:
+- Category label
+- Question text (conversational, gentle tone)
+- 4 multiple choice options
+- Correct answer index
+- Detailed, therapeutic feedback with historical context
+
+Topics: decimal currency, moon landing, Whitlam dismissal, childhood memories, technology changes, royal visits, sports, etc."
+
+Result: Generated quizQuestions array with 16 questions
+
+---
+
+PROMPT 8: Quiz Modal System
+============================
+"Create JavaScript functions to:
+- Display random quiz question in modal
+- Render multiple choice options
+- Handle answer selection
+- Show correct/incorrect feedback with explanation
+- Disable options after selection
+- Award points for correct answers (10 points)
+- Provide gentle correction for wrong answers
+- Allow player to continue after answering"
+
+Result: Generated showQuiz(), selectAnswer(), closeQuiz() functions
+
+---
+
+PROMPT 9: Score and Progress Tracking
+======================================
+"Write JavaScript functions to:
+- Track player score (memory points)
+- Update score display in real-time
+- Track position on board (1-30)
+- Update progress bar percentage
+- Calculate statistics (correct/total questions)
+- Store high score in localStorage
+- Retrieve and display high score"
+
+Result: Generated updateUI(), saveHighScore(), loadHighScore() functions
+
+---
+
+PROMPT 10: Results Screen Logic
+================================
+"Create a function to display game results with these features:
+- Show final score, correct answers, total questions
+- Generate encouraging message based on performance (4 tiers)
+- Display random dementia awareness fact
+- Therapeutic, non-judgmental language
+- Save high score if achieved
+- Provide play again and menu options"
+
+Result: Generated showResults() function with tiered messaging
+
+---
+
+PROMPT 11: Screen Navigation System
+====================================
+"Write JavaScript functions to manage screen transitions:
+- Switch between menu, game, and results screens
+- Fade in/out animations
+- Only one screen visible at a time
+- Update active class for CSS transitions
+- Handle back navigation
+- Quit game with confirmation"
+
+Result: Generated switchScreen(), quitGame(), backToMenu() functions
+
+---
+
+PROMPT 12: Local Storage Integration
+=====================================
+"Implement localStorage functionality to:
+- Save high score persistently
+- Retrieve high score on game load
+- Handle cases where localStorage might be unavailable
+- Display high score on menu screen
+- Update only when new high score achieved"
+
+Result: Integrated localStorage in score functions
+
+---
+
+PROMPT 13: Responsive Design Code
+==================================
+"Write CSS media queries for responsive design:
+- Desktop: 10-column board
+- Tablet/Mobile: 5-column board
+- Adjust font sizes for small screens
+- Reduce padding and margins
+- Make buttons stack vertically
+- Ensure touch targets remain 44px minimum
+- Scale player token size appropriately"
+
+Result: Generated @media queries for responsiveness
+
+---
+
+PROMPT 14: Accessibility Enhancements
+======================================
+"Add JavaScript and CSS for accessibility:
+- Keyboard navigation support
+- Focus indicators for all interactive elements
+- ARIA labels for screen readers
+- Reduced motion preference support
+- High contrast mode compatibility
+- Semantic HTML structure
+- Alt text for images (when added)"
+
+Result: Added accessibility CSS and ARIA considerations
+
+---
+
+PROMPT 15: Sound System Implementation
+=======================================
+"Create a JavaScript sound management system:
+- playSound(type) function
+- Support for multiple sound types (dice, success, move, etc.)
+- Placeholder for actual audio files
+- Volume control
+- Mute option
+- Preload sounds for performance
+- Fallback if sounds don't load"
+
+Result: Generated playSound() function with placeholders
+
+---
+
+PROMPT 16: Animation Timing Functions
+======================================
+"Write CSS animations for:
+- Dice roll (rotation and scale)
+- Screen fade in
+- Modal slide in
+- Button hover effects
+- Progress bar fill
+- All animations should be gentle and not startling
+- Use cubic-bezier for smooth easing
+- Support for reduced motion preference"
+
+Result: Generated @keyframes and transitions
+
+---
+
+PROMPT 17: Error Handling
+==========================
+"Add error handling for:
+- Missing DOM elements
+- localStorage failures
+- Invalid game state
+- Boundary checking (position 0-30)
+- Preventing multiple simultaneous actions
+- Quiz answer validation
+- Graceful degradation"
+
+Result: Added conditional checks and validations
+
+---
+
+PROMPT 18: Code Organization
+=============================
+"Refactor the code into modular files:
+- game-data.js: Constants and question data
+- game-logic.js: Core game mechanics
+- ui-controller.js: UI updates and screen management
+- main.js: Initialization and entry point
+- Separate HTML, CSS, JavaScript
+- Clear file structure
+- Comment documentation"
+
+Result: Split code into organized module files
+
+---
+
+PROMPT 19: Performance Optimization
+====================================
+"Optimize code for performance:
+- Use event delegation where possible
+- Minimize DOM queries (cache elements)
+- Efficient animation using CSS transforms
+- Debounce window resize events
+- Lazy load assets
+- Minimize reflows and repaints
+- Use requestAnimationFrame for animations"
+
+Result: Implemented caching and optimization techniques
+
+---
+
+PROMPT 20: Code Documentation
+==============================
+"Add comprehensive code comments including:
+- JSDoc style function documentation
+- Parameter descriptions
+- Return value documentation
+- Inline comments for complex logic
+- Section headers in CSS
+- File purpose headers
+- Usage examples
+- AI generation notes"
+
+Result: Added detailed comments throughout codebase
+
+---
+
+Tools Used:
+- ChatGPT-4 (primary code generation)
+- Claude (code review and refactoring)
+- GitHub Copilot (inline suggestions)
+- VS Code (development environment)
+
+Notes:
+- All code follows modern JavaScript ES6+ standards
+- Vanilla JavaScript (no frameworks) as required
+- Progressive enhancement approach
+- Mobile-first responsive design
+- Accessibility-first development

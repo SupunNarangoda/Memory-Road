@@ -3,16 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Memory Road - A gentle board game raising awareness about dementia in Australia">
+    <meta name="keywords" content="dementia awareness, memory game, mental health, Australia, board game">
+    <meta name="author" content="Memory Road Team">
     <title>Memory Road - A Dementia Awareness Game</title>
+
+    <!-- CSS Files -->
     <link rel="stylesheet" href="css/style.css">
+
+    <!-- Preload critical assets -->
+    <!-- AI-generated assets will be placed in assets/ folder -->
 </head>
 <body>
     <!-- Menu Screen -->
     <div id="menuScreen" class="screen active">
         <div class="menu-container">
             <h1 class="game-title">🧠 Memory Road</h1>
-            <p class="game-subtitle">A Journey to Celebrate Your Life Memories</p>
-            
+            <p class="game-subtitle">A Journey Through Australian Memories</p>
+
             <div class="menu-buttons">
                 <button class="btn btn-primary" onclick="startGame()">Start Memory Journey</button>
                 <button class="btn btn-secondary" onclick="toggleAbout()">About This Activity</button>
@@ -22,7 +30,7 @@
             <div id="aboutSection" class="about-text" style="display: none;">
                 <h3>About Memory Road</h3>
                 <p>Memory Road is a gentle memory exercise designed for people with dementia to test recall of real historical events and cultural memories from their lifetime in Australia.</p>
-                
+
                 <div class="stats">
                     💙 This activity uses real facts and events to stimulate long-term memory recall in a supportive way.
                 </div>
@@ -37,7 +45,7 @@
 
                 <h3>For Caregivers</h3>
                 <p>This game helps your loved one recall factual memories from their past. If they answer incorrectly, the game gently reminds them of the correct answer. This is normal and okay - reminiscence therapy is about the process, not perfection. Sit with them, encourage them, and celebrate what they do remember!</p>
-                
+
                 <p><strong>Support:</strong> Dementia Australia Helpline: 1800 100 500</p>
             </div>
         </div>
@@ -73,7 +81,7 @@
     <div id="resultsScreen" class="screen">
         <div class="results-container">
             <h1 class="results-title">Journey Complete! 🎉</h1>
-            
+
             <div class="results-stats">
                 <div class="stat-card">
                     <div class="stat-value" id="finalScore">0</div>
@@ -115,8 +123,9 @@
     </div>
 
     <!-- JavaScript Files -->
-    <script src="js/questions.js"></script>
-    <script src="js/game.js"></script>
-    <script src="js/ui.js"></script>
+    <script src="js/game-data.js"></script>
+    <script src="js/game-logic.js"></script>
+    <script src="js/ui-controller.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>

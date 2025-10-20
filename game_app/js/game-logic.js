@@ -1,4 +1,14 @@
-// Game State Management
+/**
+ * Memory Road - Game Logic
+ *
+ * Core game mechanics including player movement, dice rolling,
+ * quiz management, and score tracking.
+ */
+
+/**
+ * Game State Object
+ * Tracks all current game progress and player statistics
+ */
 let gameState = {
     position: 0,
     score: 0,
@@ -9,20 +19,10 @@ let gameState = {
     hasAnsweredQuestion: false
 };
 
-// Board Configuration
-const TOTAL_TILES = 30;
-const MEMORY_TILES = [5, 10, 15, 20, 25]; // Special memory milestone tiles
-
-// Initialize game on page load
-window.addEventListener('DOMContentLoaded', initGame);
-
-// Initialize game
-function initGame() {
-    createBoard();
-    loadHighScore();
-}
-
-// Create game board
+/**
+ * Initialize game board
+ * Creates all tiles with appropriate styling and labels
+ */
 function createBoard() {
     const board = document.getElementById('gameBoard');
     board.innerHTML = '';
@@ -31,7 +31,7 @@ function createBoard() {
         const tile = document.createElement('div');
         tile.className = 'tile';
         tile.id = `tile-${i}`;
-        
+
         if (MEMORY_TILES.includes(i)) {
             tile.classList.add('special');
             tile.innerHTML = `<div class="tile-number">${i}</div><div class="tile-label">🌟 Milestone</div>`;
@@ -48,7 +48,10 @@ function createBoard() {
     updatePlayerPosition();
 }
 
-// Start new game
+/**
+ * Start a new game
+ * Resets all game state and initializes the board
+ */
 function startGame() {
     gameState = {
         position: 0,
@@ -66,13 +69,16 @@ function startGame() {
     updatePlayerPosition();
 }
 
-// Roll dice
+/**
+ * Roll the dice
+ * Animates dice roll and initiates player movement
+ */
 function rollDice() {
     if (gameState.isMoving) return;
 
     const rollButton = document.getElementById('rollButton');
     const diceDisplay = document.getElementById('diceDisplay');
-    
+
     rollButton.disabled = true;
     diceDisplay.classList.add('rolling');
 
@@ -87,18 +93,21 @@ function rollDice() {
             const finalRoll = Math.floor(Math.random() * 6) + 1;
             diceDisplay.textContent = finalRoll;
             diceDisplay.classList.remove('rolling');
-            
+
             gameState.currentDiceRoll = finalRoll;
             movePlayer(finalRoll);
         }
     }, 100);
 }
 
-// Move player
+/**
+ * Move player token across the board
+ * @param {number} spaces - Number of spaces to move
+ */
 function movePlayer(spaces) {
     gameState.isMoving = true;
     const newPosition = Math.min(gameState.position + spaces, TOTAL_TILES);
-    
+
     let currentPos = gameState.position;
     const moveInterval = setInterval(() => {
         if (currentPos < newPosition) {
@@ -109,7 +118,7 @@ function movePlayer(spaces) {
         } else {
             clearInterval(moveInterval);
             gameState.isMoving = false;
-            
+
             // Check if game is complete
             if (gameState.position >= TOTAL_TILES) {
                 setTimeout(() => showResults(), 1000);
@@ -121,34 +130,38 @@ function movePlayer(spaces) {
     }, 300);
 }
 
-// Update player token position on board
+/**
+ * Update player token visual position on the board
+ */
 function updatePlayerPosition() {
     const token = document.getElementById('playerToken');
     const tile = document.getElementById(`tile-${Math.max(1, gameState.position)}`);
-    
+
     if (tile) {
         const rect = tile.getBoundingClientRect();
         const boardRect = document.getElementById('gameBoard').getBoundingClientRect();
-        
+
         token.style.left = (rect.left - boardRect.left + rect.width / 2 - 15) + 'px';
         token.style.top = (rect.top - boardRect.top + rect.height / 2 - 15) + 'px';
     }
 }
 
-// Show quiz modal
+/**
+ * Display a random quiz question
+ */
 function showQuiz() {
     const modal = document.getElementById('quizModal');
     const question = quizQuestions[Math.floor(Math.random() * quizQuestions.length)];
-    
+
     document.getElementById('quizCategory').textContent = question.category;
     document.getElementById('quizQuestion').textContent = question.question;
-    
+
     const optionsContainer = document.getElementById('quizOptions');
     optionsContainer.innerHTML = '';
-    
+
     // Store current question for answer checking
     window.currentQuestion = question;
-    
+
     question.options.forEach((option, index) => {
         const optionDiv = document.createElement('div');
         optionDiv.className = 'quiz-option';
@@ -161,33 +174,37 @@ function showQuiz() {
     document.getElementById('quizFeedback').classList.remove('show', 'correct', 'incorrect');
     document.getElementById('continueButton').style.display = 'none';
     gameState.hasAnsweredQuestion = false;
-    
+
     modal.classList.add('active');
 }
 
-// Handle answer selection
+/**
+ * Handle quiz answer selection
+ * Provides gentle feedback and educational content
+ * @param {number} selectedIndex - Index of selected answer
+ */
 function selectAnswer(selectedIndex) {
     if (gameState.hasAnsweredQuestion) return;
-    
+
     gameState.hasAnsweredQuestion = true;
     gameState.questionsAnswered++;
-    
+
     const question = window.currentQuestion;
     const correctIndex = question.correct;
     const feedback = question.feedback;
-    
+
     const options = document.querySelectorAll('.quiz-option');
     options.forEach(opt => opt.style.pointerEvents = 'none');
-    
+
     options[selectedIndex].classList.add('selected');
-    
+
     setTimeout(() => {
         // Show the correct answer
         options[correctIndex].classList.add('correct');
-        
+
         const feedbackDiv = document.getElementById('quizFeedback');
         const isCorrect = selectedIndex === correctIndex;
-        
+
         if (isCorrect) {
             gameState.correctAnswers++;
             gameState.score += 10;
@@ -199,7 +216,7 @@ function selectAnswer(selectedIndex) {
             feedbackDiv.classList.remove('incorrect');
             playSound('success');
         } else {
-            // Mark wrong answer but don't penalize score heavily
+            // Mark wrong answer but provide gentle correction
             options[selectedIndex].classList.add('incorrect');
             feedbackDiv.innerHTML = `
                 <h4>💙 Let me help you remember...</h4>
@@ -211,29 +228,34 @@ function selectAnswer(selectedIndex) {
             feedbackDiv.classList.add('incorrect');
             feedbackDiv.classList.remove('correct');
         }
-        
+
         feedbackDiv.classList.add('show');
         document.getElementById('continueButton').style.display = 'block';
         updateUI();
     }, 500);
 }
 
-// Close quiz modal
+/**
+ * Close quiz modal and re-enable dice rolling
+ */
 function closeQuiz() {
     const modal = document.getElementById('quizModal');
     modal.classList.remove('active');
     document.getElementById('rollButton').disabled = false;
 }
 
-// Show results screen
+/**
+ * Display final results screen
+ * Shows therapeutic messaging based on performance
+ */
 function showResults() {
     document.getElementById('finalScore').textContent = gameState.score;
     document.getElementById('correctAnswers').textContent = gameState.correctAnswers;
     document.getElementById('totalQuestions').textContent = gameState.questionsAnswered;
-    
+
     // Generate encouraging message based on participation
     let message = '';
-    
+
     if (gameState.questionsAnswered >= 10) {
         message = `Wonderful job today! You've shared ${gameState.questionsAnswered} precious memories from your life. Each memory you recalled shows the richness of your experiences. Your story matters, and taking time to remember these moments is valuable and therapeutic.`;
     } else if (gameState.questionsAnswered >= 6) {
@@ -243,5 +265,77 @@ function showResults() {
     } else {
         message = `Thank you for spending time with us today. Even remembering just a little bit is meaningful. Your memories are important, and we're here to support you on this journey. You're doing great!`;
     }
-    
+
     document.getElementById('resultsMessage').textContent = message;
+
+    // Show encouraging fact
+    const randomFact = dementiaFacts[Math.floor(Math.random() * dementiaFacts.length)];
+    document.getElementById('finalFact').textContent = randomFact;
+
+    // Save high score
+    saveHighScore();
+
+    switchScreen('resultsScreen');
+}
+
+/**
+ * Save high score to localStorage
+ */
+function saveHighScore() {
+    const highScore = localStorage.getItem('memoryRoadHighScore') || 0;
+    if (gameState.score > highScore) {
+        localStorage.setItem('memoryRoadHighScore', gameState.score);
+    }
+}
+
+/**
+ * Load and display high score
+ */
+function loadHighScore() {
+    return localStorage.getItem('memoryRoadHighScore') || 0;
+}
+
+/**
+ * Show high score alert
+ */
+function showHighScore() {
+    const highScore = loadHighScore();
+    alert(`🏆 Your High Score: ${highScore} Memory Points\n\nKeep playing to learn more about dementia awareness!`);
+}
+
+/**
+ * Quit current game with confirmation
+ */
+function quitGame() {
+    if (confirm('Are you sure you want to quit? Your progress will be lost.')) {
+        switchScreen('menuScreen');
+    }
+}
+
+/**
+ * Return to main menu
+ */
+function backToMenu() {
+    switchScreen('menuScreen');
+}
+
+/**
+ * Play sound effect
+ * @param {string} type - Sound type to play
+ *
+ * NOTE: Sound files would be generated using AI audio tools
+ * AI PROMPT: "Generate gentle, soothing game sound effects suitable for
+ * elderly users: success chime, dice roll, and soft background music"
+ */
+function playSound(type) {
+    // Placeholder for sound effects
+    // In production: new Audio('assets/sounds/' + type + '.mp3').play();
+    console.log('Playing sound:', type);
+}
+
+// Handle window resize for responsive player token positioning
+window.addEventListener('resize', () => {
+    if (gameState.position > 0) {
+        updatePlayerPosition();
+    }
+});

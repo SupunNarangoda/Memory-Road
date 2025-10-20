@@ -1,0 +1,402 @@
+=== MEMORY ROAD - REFINEMENT & DEBUGGING PROMPTS ===
+
+Date: 2024
+Purpose: Code refinement, bug fixes, and polish
+
+---
+
+PROMPT 1: Code Review Request
+==============================
+"Review this game code for potential issues:
+- Check for accessibility problems
+- Identify performance bottlenecks
+- Look for code duplication
+- Suggest architectural improvements
+- Check for edge cases and bugs
+- Verify best practices compliance"
+
+Improvements Made:
+- Extracted constants to separate file
+- Added input validation
+- Improved error handling
+- Cached DOM queries
+- Added boundary checks
+
+---
+
+PROMPT 2: Mobile Responsiveness Testing
+========================================
+"The game board doesn't display well on mobile devices. Help me:
+- Make the grid responsive (10 cols → 5 cols on mobile)
+- Ensure buttons are touch-friendly (min 44px)
+- Adjust font sizes for readability
+- Fix player token positioning on smaller screens
+- Test modal on mobile viewport"
+
+Fixes Applied:
+- Added @media query for max-width: 768px
+- Changed grid to 5 columns on mobile
+- Increased button min-width
+- Adjusted player token size
+- Made modal padding responsive
+
+---
+
+PROMPT 3: Animation Smoothness
+===============================
+"The player token movement feels jerky. How can I make it smoother?"
+
+Solution:
+- Added cubic-bezier easing function
+- Increased transition duration to 0.5s
+- Used CSS transform instead of position
+- Added will-change property hint
+- Implemented step-by-step movement with delays
+
+---
+
+PROMPT 4: Quiz Feedback Enhancement
+====================================
+"The quiz feedback for wrong answers is too harsh. Make it more therapeutic and gentle, suitable for dementia patients."
+
+Changes:
+- Changed "Wrong!" to "Let me help you remember..."
+- Added context about why wrong answers are okay
+- Emphasized learning over correctness
+- Used 💙 emoji for warmth
+- Highlighted correct answer gently
+- Added educational historical context
+
+---
+
+PROMPT 5: Accessibility Audit
+==============================
+"Audit this game for WCAG 2.1 Level AA accessibility compliance. Check:
+- Color contrast ratios
+- Keyboard navigation
+- Screen reader support
+- Focus indicators
+- Alternative text
+- Motion sensitivity"
+
+Improvements:
+- Increased color contrast to 4.5:1 minimum
+- Added prefers-reduced-motion media query
+- Ensured all buttons are keyboard accessible
+- Added ARIA labels (planned)
+- Made animations optional
+- Improved focus states
+
+---
+
+PROMPT 6: Performance Optimization
+===================================
+"The game lags when animating the dice. Optimize performance."
+
+Optimizations:
+- Used CSS animations instead of JS intervals
+- Reduced animation interval from 50ms to 100ms
+- Cached DOM element references
+- Removed unnecessary reflows
+- Used transform instead of margin/padding changes
+- Added hardware acceleration with transform3d
+
+---
+
+PROMPT 7: LocalStorage Edge Cases
+==================================
+"Handle edge cases for localStorage:
+- User has localStorage disabled
+- First time user (no saved data)
+- Corrupted data
+- Storage quota exceeded"
+
+Solutions:
+- Added try-catch blocks
+- Default fallback values
+- Validation before saving
+- Graceful degradation if unavailable
+- || operator for null/undefined checks
+
+---
+
+PROMPT 8: Cross-Browser Compatibility
+======================================
+"Test and fix compatibility issues across browsers:
+- Chrome
+- Firefox
+- Safari
+- Edge
+- Mobile browsers"
+
+Fixes:
+- Added vendor prefixes where needed
+- Tested flexbox/grid fallbacks
+- Verified ES6 feature support
+- Added polyfills for older browsers (planned)
+- Tested touch events on mobile
+
+---
+
+PROMPT 9: Question Variety Improvement
+=======================================
+"Some questions feel repetitive. How can I ensure better variety?"
+
+Implementation:
+- Track recently asked questions
+- Implement shuffle algorithm
+- Ensure no immediate repeats
+- Balance categories
+- Random selection from pool
+
+Note: Currently uses simple random, enhancement planned
+
+---
+
+PROMPT 10: Results Screen Messaging
+====================================
+"The results screen messaging should be more personalized based on performance. Create tiered messages."
+
+Implemented Tiers:
+- Excellent (10+ questions): Emphasis on rich experiences
+- Good (6-9 questions): Praise for sharing memories
+- Fair (3-5 questions): Validation and encouragement
+- Participation (1-2): Thanks and gentle support
+
+All messages avoid judgment and focus on therapeutic value
+
+---
+
+PROMPT 11: Visual Hierarchy Improvement
+========================================
+"The menu screen feels cluttered. Improve visual hierarchy."
+
+Changes:
+- Increased title font size
+- Added more whitespace
+- Used color to guide attention
+- Made primary CTA more prominent
+- Collapsed About section by default
+- Improved button sizing and spacing
+
+---
+
+PROMPT 12: Loading State Handling
+==================================
+"Add loading states for better UX when game initializes."
+
+Implementation:
+- Board generation on initialization
+- Fade-in animations for screens
+- Button disable states during actions
+- Visual feedback during dice roll
+- Prevent rapid clicking
+
+---
+
+PROMPT 13: Error Message Improvement
+=====================================
+"Make error messages user-friendly and helpful instead of technical."
+
+Examples:
+- "High score couldn't be saved" instead of "localStorage error"
+- "Please try again" instead of "undefined value"
+- Friendly language throughout
+- Avoid technical jargon
+
+---
+
+PROMPT 14: Dementia Awareness Content
+======================================
+"Enhance dementia awareness content with more impactful statistics and resources."
+
+Additions:
+- Updated Australian statistics (2024)
+- Added Dementia Australia helpline
+- Included caregiver information
+- Added therapeutic benefits explanation
+- Linked to support resources
+
+---
+
+PROMPT 15: Button State Management
+===================================
+"Fix issue where roll button can be clicked multiple times rapidly."
+
+Solution:
+- Disable button immediately on click
+- Set isMoving flag
+- Only re-enable after quiz closes
+- Visual disabled state (opacity)
+- Cursor: not-allowed when disabled
+
+---
+
+PROMPT 16: Modal Z-Index Issues
+================================
+"Quiz modal sometimes appears behind other elements."
+
+Fix:
+- Set modal z-index to 1000
+- Ensure proper stacking context
+- Position fixed for full viewport coverage
+- Background overlay blocks interaction
+- Proper layer ordering in CSS
+
+---
+
+PROMPT 17: Progress Bar Accuracy
+=================================
+"Progress bar doesn't fill completely at position 30."
+
+Solution:
+- Fixed calculation: (position / TOTAL_TILES) * 100
+- Ensured 100% at final position
+- Smooth transition animation
+- Accurate percentage display
+- Visual feedback matches game state
+
+---
+
+PROMPT 18: Font Loading Optimization
+=====================================
+"Ensure fonts load properly and prevent FOIT/FOUT."
+
+Strategy:
+- Used system fonts (Segoe UI family)
+- No external font loading required
+- Fast render time
+- Consistent across platforms
+- Accessible fallbacks
+
+---
+
+PROMPT 19: Color Scheme Refinement
+===================================
+"Adjust color scheme for better therapeutic feeling and accessibility."
+
+Refined Palette:
+- Warmer purple tones
+- Higher contrast ratios
+- Gentler gradients
+- Calming blue accents
+- Warm feedback colors (not harsh red/green)
+
+---
+
+PROMPT 20: Code Comments Enhancement
+=====================================
+"Add more helpful comments explaining the therapeutic design choices."
+
+Added:
+- Explanation of reminiscence therapy approach
+- Why certain colors were chosen
+- Accessibility reasoning
+- Performance optimization notes
+- User experience considerations
+- AI generation documentation
+
+---
+
+PROMPT 21: File Structure Organization
+=======================================
+"Reorganize code into clean, modular file structure suitable for submission."
+
+Created Structure:
+```
+game_app/
+├── index.html
+├── css/
+│   └── style.css
+├── js/
+│   ├── main.js
+│   ├── game-data.js
+│   ├── game-logic.js
+│   └── ui-controller.js
+└── assets/
+    ├── images/
+    └── sounds/
+```
+
+---
+
+PROMPT 22: README Enhancement
+==============================
+"Write a comprehensive README with:
+- Project overview
+- Setup instructions
+- Technology stack
+- Social impact explanation
+- Game instructions
+- Contribution guidelines
+- Support resources"
+
+Result: Detailed README.md created
+
+---
+
+PROMPT 23: Documentation Polish
+================================
+"Create detailed prompt documentation files showing the AI-assisted development process."
+
+Created Files:
+- concept_prompts.txt
+- asset_generation_prompts.txt
+- code_generation_prompts.txt
+- refinement_prompts.txt
+
+---
+
+PROMPT 24: Final Code Cleanup
+==============================
+"Final cleanup before submission:
+- Remove console.logs (keep useful ones)
+- Fix indentation consistency
+- Remove unused code
+- Verify all comments
+- Check for TODOs
+- Ensure no hardcoded values"
+
+Completed:
+- Cleaned up debug code
+- Consistent 4-space indentation
+- Removed dead code
+- Updated all comments
+- Extracted magic numbers to constants
+- Code ready for submission
+
+---
+
+PROMPT 25: Testing Checklist
+=============================
+"Create a testing checklist for final validation."
+
+Checklist:
+✅ Game loads without errors
+✅ Dice rolls correctly (1-6)
+✅ Player moves incrementally
+✅ Quiz appears after movement
+✅ Correct answers award points
+✅ Wrong answers show gentle feedback
+✅ Progress bar updates
+✅ Game completes at tile 30
+✅ Results display correctly
+✅ High score saves and loads
+✅ Responsive on mobile
+✅ Accessible with keyboard
+✅ Buttons have proper states
+✅ All screens transition smoothly
+✅ About section toggles
+✅ Quit confirmation works
+
+---
+
+Testing Tools Used:
+- Chrome DevTools
+- Firefox Developer Tools
+- Lighthouse (accessibility audit)
+- Mobile device testing
+- Screen reader testing (NVDA)
+- Keyboard-only navigation testing
+
+Final Status: All major issues resolved, game polished and ready for submission

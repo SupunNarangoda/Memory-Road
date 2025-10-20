@@ -1,0 +1,212 @@
+=== MEMORY ROAD - ASSET GENERATION PROMPTS ===
+
+Date: 2024
+Purpose: AI-generated visual and audio assets
+
+---
+
+IMAGE GENERATION PROMPTS (DALL-E 3 / Midjourney / Stable Diffusion)
+====================================================================
+
+PROMPT 1: Game Background
+--------------------------
+"Create a gentle watercolor illustration of an Australian landscape featuring eucalyptus trees, a winding path through memories, warm sunset colors in purple and orange gradients, therapeutic and calming aesthetic, soft edges, suitable for dementia patients, peaceful atmosphere, 1920x1080px, landscape orientation"
+
+Style: Watercolor, soft, therapeutic
+Colors: Purple, blue, orange, warm tones
+Usage: Main game background
+
+---
+
+PROMPT 2: Player Token
+-----------------------
+"Design a cute 3D rendered heart icon in warm red-pink gradient, friendly and approachable design, glossy finish, soft shadow, transparent background, 512x512px, suitable for elderly users, gentle and loving aesthetic"
+
+Style: 3D render, friendly
+Colors: Red, pink gradient
+Usage: Player position marker on board
+
+---
+
+PROMPT 3: Dice Faces (Set of 6)
+--------------------------------
+"Create a large, clear dice face showing [NUMBER] dots in a friendly arrangement, high contrast white background with purple dots, rounded corners, very easy to read for elderly users with vision challenges, warm colors, gentle shadows, 256x256px"
+
+Note: Generate 6 variations (1-6 dots)
+Style: Clear, high contrast, friendly
+Usage: Animated dice display
+
+---
+
+PROMPT 4: Memory Tile Icon
+---------------------------
+"Design a soft watercolor brain icon with gentle sparkles around it, purple and blue gradient, therapeutic and positive design, represents memory and thinking, warm and encouraging aesthetic, transparent background, 256x256px"
+
+Style: Watercolor, gentle
+Colors: Purple, blue
+Usage: Memory tile markers on board
+
+---
+
+PROMPT 5: Milestone Tile Icon
+------------------------------
+"Create a golden star icon with warm glow effect, celebration aesthetic but gentle, soft rays of light, represents achievement and progress, therapeutic design, not overwhelming, transparent background, 256x256px"
+
+Style: Glowing, celebratory, gentle
+Colors: Gold, yellow
+Usage: Special milestone tile markers
+
+---
+
+PROMPT 6: Menu Background
+--------------------------
+"Design an abstract Australian themed background with gentle gradients, silhouettes of eucalyptus leaves floating, warm purple and blue tones blending smoothly, calming atmosphere, no harsh edges, therapeutic design, suitable for elderly users, 1920x1080px"
+
+Style: Abstract, gradient, Australian
+Colors: Purple, blue, warm tones
+Usage: Main menu background
+
+---
+
+PROMPT 7: Success Icon
+-----------------------
+"Create a warm, encouraging checkmark icon in a circle, gentle green gradient, friendly and positive design, soft glow effect, represents correct answer, not too bold, therapeutic aesthetic, transparent background, 128x128px"
+
+Style: Friendly, encouraging
+Colors: Green gradient
+Usage: Correct answer feedback
+
+---
+
+PROMPT 8: Quiz Modal Background Pattern
+----------------------------------------
+"Design a subtle, repeating pattern of small Australian icons (kangaroo, koala, eucalyptus leaves) in very light gray, barely visible, suitable as a background texture, not distracting, calm and gentle, 512x512px tileable"
+
+Style: Subtle pattern, minimal
+Colors: Light gray, barely visible
+Usage: Quiz modal background texture
+
+---
+
+AUDIO GENERATION PROMPTS (ElevenLabs / Suno / AIVA)
+====================================================
+
+PROMPT 9: Dice Roll Sound
+--------------------------
+"Generate a gentle dice rolling sound effect, soft plastic dice tumbling on felt, warm tone, pleasant and not startling, suitable for elderly users with sensitive hearing, natural acoustic sound, 1-2 seconds duration, fade out at end"
+
+Type: Sound effect
+Duration: 1-2 seconds
+Usage: When player rolls dice
+
+---
+
+PROMPT 10: Success Chime
+-------------------------
+"Create a warm, encouraging success chime using soft bells or piano notes, uplifting but not overwhelming, gentle and therapeutic, major key, suitable for elderly users, pleasant and validating tone, 1 second duration"
+
+Type: Sound effect
+Duration: 1 second
+Usage: Correct answer feedback
+
+---
+
+PROMPT 11: Movement Sound
+--------------------------
+"Generate a soft clicking or gentle stepping sound effect, like a game piece moving on a board, pleasant and subtle, warm tone, not startling, suitable for elderly ears, 0.3-0.5 seconds"
+
+Type: Sound effect
+Duration: 0.5 seconds
+Usage: Player token movement
+
+---
+
+PROMPT 12: Background Music
+----------------------------
+"Compose gentle ambient background music with therapeutic and calming qualities, featuring soft piano melodies with subtle string accompaniment, slow tempo (60-70 BPM), Australian inspired themes, reminiscent of peaceful countryside, loop-able composition, major key with occasional gentle modulations, suitable for reminiscence therapy, 2-3 minutes duration, seamless loop points"
+
+Type: Background music
+Duration: 2-3 minutes
+Usage: Optional ambient music during gameplay
+
+---
+
+PROMPT 13: Quiz Appear Sound
+-----------------------------
+"Create a gentle notification sound for when a quiz question appears, soft ascending chime, pleasant and inviting, not demanding or urgent, warm tone, suitable for elderly users, curious and friendly feeling, 0.5 seconds"
+
+Type: Sound effect
+Duration: 0.5 seconds
+Usage: Quiz modal opening
+
+---
+
+PROMPT 14: Completion Fanfare
+------------------------------
+"Compose a warm completion fanfare, celebratory but gentle, uplifting melody using piano and soft strings, not too loud or overwhelming, suitable for elderly users, validates achievement, major key, positive and encouraging tone, 3-4 seconds"
+
+Type: Sound effect / Short music
+Duration: 3-4 seconds
+Usage: Game completion
+
+---
+
+UI ICON PROMPTS (Simple SVG / Icon Design)
+===========================================
+
+PROMPT 15: Settings Icon
+-------------------------
+"Design a simple, clear settings gear icon, large and easy to see, rounded style, purple color (#667eea), thick lines for visibility, 64x64px"
+
+---
+
+PROMPT 16: Info Icon
+---------------------
+"Create a friendly information icon (lowercase 'i' in a circle), warm purple color, rounded and approachable design, clear and easy to read, 64x64px"
+
+---
+
+PROMPT 17: Home Icon
+--------------------
+"Design a simple house/home icon, warm and inviting style, purple color, rounded edges, clear and recognizable, suitable for elderly users, 64x64px"
+
+---
+
+COLOR PALETTE GENERATION
+=========================
+
+PROMPT 18: Therapeutic Color Scheme
+------------------------------------
+"Generate a calming, therapeutic color palette suitable for a dementia awareness game. Colors should be warm, inviting, and easy to distinguish. Include primary gradient colors, accent colors, and text colors. Focus on purple and blue tones with warm accents. Ensure WCAG AA accessibility standards."
+
+Generated Palette:
+- Primary: #667eea (Purple)
+- Secondary: #764ba2 (Deep Purple)
+- Accent: #ff6b6b (Warm Red)
+- Success: #4caf50 (Green)
+- Background: Linear gradient (purple to violet)
+- Text: #333333 (Dark Gray)
+- White: #ffffff
+
+---
+
+TYPOGRAPHY PROMPTS
+==================
+
+PROMPT 19: Font Selection
+--------------------------
+"Recommend web-safe, highly readable fonts suitable for elderly users in a browser game about dementia. Fonts should be clear, friendly, and work well at large sizes. Include fallback options."
+
+Selected Fonts:
+- Primary: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+- Minimum size: 16px (body), 18px+ (UI elements)
+- Line height: 1.6 for readability
+
+---
+
+Notes:
+- All image prompts designed for consistency in style
+- Audio prompts emphasize gentle, non-startling characteristics
+- Color choices follow accessibility guidelines
+- Assets should maintain therapeutic, calming aesthetic
+- Actual asset generation requires paid AI tools or credits

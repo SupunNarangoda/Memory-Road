@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(dir)",
+      "Bash(mkdir -p game_submission/prompts game_submission/game_app/assets/images game_submission/game_app/assets/sounds game_submission/game_app/css game_submission/game_app/js game_submission/screenshots)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
