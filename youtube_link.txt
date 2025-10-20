@@ -1,0 +1,25 @@
+YouTube Video Link:
+https://www.youtube.com/watch?v=F828kndqda0
+
+---
+
+Video Title Suggestion:
+"Memory Road: Building a Game to Help My Grandparents with Dementia"
+
+Video Description:
+A personal story about creating Memory Road, a web-based board game designed for people with dementia. This project uses reminiscence therapy and Australian historical memories to help celebrate preserved memories and create meaningful connections between patients and caregivers.
+
+Features:
+✅ Questions based on real Australian history (1940s-1980s)
+✅ Gentle, encouraging feedback - never punitive
+✅ Family Admin Portal to customize questions
+✅ Completely free and open source
+
+Try Memory Road: [Your hosted URL here]
+
+About Dementia in Australia:
+- Over 421,000 Australians live with dementia
+- Reminiscence therapy can improve mood and reduce anxiety
+- Dementia Australia Helpline: 1800 100 500
+
+#Dementia #DementiaAwareness #ReminiscenceTherapy #AustralianHistory #CaregiverSupport
